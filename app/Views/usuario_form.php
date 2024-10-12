@@ -10,7 +10,9 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Formulario de Currículum Vitae</h2>
-
+        <div class="my-5">
+            <a href="<?= base_url('usuario/lista')?>"> <button class="btn btn-primary">Ver curriculums</button></a>
+        </div>
         <!-- Mensajes de validación -->
         <?php if (isset($validation)): ?>
             <div class="alert alert-danger">
@@ -23,56 +25,56 @@
             <?= csrf_field() ?>
 
             <div class="mb-3">
-                <label for="nombreCompleto" class="form-label">Nombre completo</label>
-                <input type="text" class="form-control" id="nombreCompleto" required>
+                <label for="nombre_completo" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" name="nombre_completo" id="nombre_completo" required>
                 <div class="invalid-feedback">Por favor, ingrese su nombre completo.</div>
             </div>
             <div class="mb-3">
-                <label for="email" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="email" required>
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" name="correo" id="correo" required>
                 <div class="invalid-feedback">Por favor, ingrese un correo electrónico válido.</div>
             </div>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono</label>
-                <input type="tel" class="form-control" id="telefono" pattern="\d*" maxlength="10" required>
+                <input type="tel" class="form-control" name="telefono" id="telefono" pattern="\d*" maxlength="10" required>
                 <div class="invalid-feedback">Por favor, ingrese un número de teléfono válido (solo dígitos).</div>
             </div>
             <div class="mb-3">
                 <label for="direccion" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="direccion" required>
+                <input type="text" class="form-control" name="direccion" id="direccion" required>
                 <div class="invalid-feedback">Por favor, ingrese su dirección.</div>
             </div>
             <div class="mb-3">
-                <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="fechaNacimiento" required>
+                <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
+                <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" required>
                 <div class="invalid-feedback">Por favor, ingrese su fecha de nacimiento.</div>
             </div>
             <div class="mb-3">
                 <label for="titulo" class="form-label">Título profesional</label>
-                <input type="text" class="form-control" id="titulo" required>
+                <input type="text" class="form-control" name="titulo" id="titulo" required>
                 <div class="invalid-feedback">Por favor, ingrese su título profesional.</div>
             </div>
             <div class="mb-3">
-                <label for="experienciaLaboral" class="form-label">Experiencia laboral</label>
-                <textarea class="form-control" id="experienciaLaboral" rows="4" required></textarea>
+                <label for="experiencia" class="form-label">Experiencia laboral</label>
+                <textarea class="form-control" name="experiencia" id="experiencia" rows="4" required></textarea>
                 <div class="invalid-feedback">Por favor, describa su experiencia laboral.</div>
             </div>
             <div class="mb-3">
                 <label for="habilidades" class="form-label">Habilidades</label>
-                <textarea class="form-control" id="habilidades" rows="3" required></textarea>
+                <textarea class="form-control" name="habilidades" id="habilidades" rows="3" required></textarea>
                 <div class="invalid-feedback">Por favor, describa sus habilidades.</div>
             </div>
             <div class="mb-3">
                 <label for="educacion" class="form-label">Educación</label>
-                <textarea class="form-control" id="educacion" rows="3" required></textarea>
+                <textarea class="form-control" name="educacion" id="educacion" rows="3" required></textarea>
                 <div class="invalid-feedback">Por favor, describa su educación.</div>
             </div>
             <div class="mb-3">
                 <label for="idiomas" class="form-label">Idiomas</label>
-                <textarea class="form-control" id="idiomas" rows="3" required></textarea>
+                <textarea class="form-control" name="idiomas" id="idiomas" rows="3" required></textarea>
                 <div class="invalid-feedback">Por favor, describa los idiomas que maneja.</div>
             </div>
-            <button class="btn btn-primary" type="submit">Enviar</button>
+            <button class="btn btn-primary my-5" type="submit">Enviar</button>
             <br>
         </form>
     </div>

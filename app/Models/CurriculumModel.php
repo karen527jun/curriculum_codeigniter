@@ -10,12 +10,12 @@ class CurriculumModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = [
         'nombre_completo', 
-        'email', 
+        'correo', 
         'telefono', 
         'direccion', 
         'fecha_nacimiento', 
         'titulo', 
-        'experiencia_laboral', 
+        'experiencia', 
         'habilidades', 
         'educacion', 
         'idiomas'

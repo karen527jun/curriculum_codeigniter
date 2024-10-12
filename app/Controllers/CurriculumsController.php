@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Models\UsuarioModel;
+use App\Models\CurriculumModel;
 
-class UsuarioController extends BaseController
+class CurriculumsController extends BaseController
 {
     public function index()
     {
@@ -13,7 +13,7 @@ class UsuarioController extends BaseController
 
     public function store()
     {
-        $usuarioModel = new UsuarioModel(); 
+        $usuarioModel = new CurriculumModel(); 
 
         // dd($this->request->getPost());
         // Verificar si los datos están llegando
@@ -67,9 +67,21 @@ class UsuarioController extends BaseController
     // funcion lista
     public function list()
     {
-        $usuarioModel = new UsuarioModel(); 
-        $usuarios = $usuarioModel->findAll(); // Obtener todos los registros de la tabla de usuarios
+        $curriculumModel = new CurriculumModel(); 
+        $curriculums = $curriculumModel->findAll(); // Obtener todos los registros de la tabla de usuarios
 
-        return view('usuario_list', ['usuarios' => $usuarios]); 
+        return view('usuario_list', ['curriculums' => $curriculums]); 
+    }
+
+    public function show($id)
+    {   
+        $curriculumModel = new CurriculumModel();
+        $curriculums = $curriculumModel->find($id);
+        
+        if($curriculums){
+             return view('curriculum_detalle',['curriculum'=> $curriculums]);
+        }else{
+            return view('errors/404');
+        }
     }
 }

@@ -10,38 +10,22 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Lista de Currículums</h1>
-
+        <div class="my-5">
+            <a href="<?= base_url('usuario')?>"> <button class="btn btn-primary">Agregar nuevo</button></a>
+        </div>
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>ID</th>
                     <th>Nombre Completo</th>
-                    <th>Email</th>
-                    <th>Teléfono</th>
-                    <th>Dirección</th>
-                    <th>Fecha de Nacimiento</th>
                     <th>Título</th>
-                    <th>Experiencia Laboral</th>
-                    <th>Habilidades</th>
-                    <th>Educación</th>
-                    <th>Idiomas</th>
                 </tr>
             </thead>
             <tbody>
-            <?php if (!empty($usuarios) && is_array($usuarios)): ?>
-                <?php foreach ($usuarios as $usuario): ?>
+            <?php if (!empty($curriculums) && is_array($curriculums)): ?>
+                <?php foreach ($curriculums as $cv): ?>
                         <tr>
-                            <td><?= esc($curriculum['id']) ?></td>
-                            <td><?= esc($curriculum['nombre_completo']) ?></td>
-                            <td><?= esc($curriculum['email']) ?></td>
-                            <td><?= esc($curriculum['telefono']) ?></td>
-                            <td><?= esc($curriculum['direccion']) ?></td>
-                            <td><?= esc($curriculum['fecha_nacimiento']) ?></td>
-                            <td><?= esc($curriculum['titulo']) ?></td>
-                            <td><?= esc($curriculum['experiencia_laboral']) ?></td>
-                            <td><?= esc($curriculum['habilidades']) ?></td>
-                            <td><?= esc($curriculum['educacion']) ?></td>
-                            <td><?= esc($curriculum['idiomas']) ?></td>
+                       <td><a href="<?= base_url('usuario/show/' . $cv['id']) ?>"><?= esc($cv['nombre_completo']) ?></a></td>
+                        <td><?= esc($cv['titulo']) ?></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>

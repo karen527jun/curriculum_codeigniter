@@ -6,16 +6,16 @@ use CodeIgniter\Model;
 
 class UsuarioModel extends Model
 {
-    protected $table = 'usuarios';
+    protected $table = 'curriculums';
     protected $primaryKey = 'id';
-    protected $allowFields =[
-      'nombre',
-      'email',
+    protected $allowedFields =[
+      'nombre_completo',
+      'correo',
       'telefono',
       'direccion',
-      'fechaNacimiento',
+      'fecha_nacimiento',
       'titulo',
-      'experienciaLaboral',
+      'experiencia',
       'habilidades',
       'educacion',
       'idiomas'  

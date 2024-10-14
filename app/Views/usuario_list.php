@@ -10,8 +10,21 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Lista de Currículums</h1>
-        <div class="my-5">
-            <a href="<?= base_url('usuario')?>"> <button class="btn btn-primary">Agregar nuevo</button></a>
+        <div class="my-5 d-flex justify-content-between align-items-end">
+            <div>
+                <a href="<?= base_url('usuario')?>"> <button class="btn btn-primary">Agregar nuevo</button></a>
+            </div>
+            <div class="d-flex align-items-end">
+                <form action="<?= base_url('usuario/lista/search') ?>" method="POST" class="d-flex align-items-end">
+                    <div class="mx-5">
+                        <label for="filtro" class="form-label mx-2">Filtrar</label>
+                        <input  class="form-control" name="busqueda" id="filtro" placeholder="Buscar"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Buscar</button>
+                    <a href=""<?= base_url('usuario/lista') ?>"><button type="submit" class="btn btn-primary mx-3"  >Limpiar filtro</button></a>
+
+                </form>
+            </div>
         </div>
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">

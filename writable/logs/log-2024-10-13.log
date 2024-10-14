@@ -1,0 +1,12 @@
+CRITICAL - 2024-10-13 17:31:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "save_success.php"
+[Method: GET, Route: usuario/success]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('save_success.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('save_success', [], true)
+ 3 APPPATH\Controllers\CurriculumsController.php(64): view('save_success')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CurriculumsController->success()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CurriculumsController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

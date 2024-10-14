@@ -56,12 +56,12 @@ class CurriculumsController extends BaseController
             'idiomas'         => $this->request->getPost('idiomas'),
         ]);
 
-        return redirect()->to('usuario/success');
+        return redirect()->to((base_url('usuario/success')));
     }
 
     public function success()
     {
-        return "Datos guardados con éxito!";
+        return view('curriculum_success');
     }
 
     // funcion lista
@@ -83,5 +83,11 @@ class CurriculumsController extends BaseController
         }else{
             return view('errors/404');
         }
+    }
+    public function search(){
+        $busqueda = $this->request->getPost('busqueda');
+        $model = new CurriculumModel();
+        $curriculums = $model->like('nombre_completo', $busqueda)->orLike('titulo', $busqueda)->findAll();
+        return view('usuario_list', ['curriculums'=>$curriculums]);
     }
 }

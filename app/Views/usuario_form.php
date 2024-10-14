@@ -19,6 +19,11 @@
                 <?= $validation->listErrors() ?>
             </div>
         <?php endif; ?>
+        <?php if (isset($validation)): ?>
+            <div class="alert alert-danger">
+                <?= $validation->listErrors() ?>
+            </div>
+        <?php endif; ?>
 
         <!-- Formulario de registro INICIO -->
         <form action="usuario/store" method="post" class="needs-validation mt-4" novalidate>

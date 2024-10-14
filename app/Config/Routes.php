@@ -11,4 +11,6 @@ $routes->post('/usuario/store', 'CurriculumsController::store');
 $routes->get('/usuario/success', 'CurriculumsController::success');
 $routes->get('/usuario/lista', 'CurriculumsController::list');
 $routes->get('usuario/show/(:num)', 'CurriculumsController::show/$1');
+$routes->get('usuario/success', 'CurriculumsController::success');
+$routes->post('/usuario/lista/search','CurriculumsController::search');
 
